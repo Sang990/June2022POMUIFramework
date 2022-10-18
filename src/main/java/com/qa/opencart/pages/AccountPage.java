@@ -3,6 +3,7 @@ package com.qa.opencart.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,8 @@ public class AccountPage {
 
 	private WebDriver driver;
 	private ElementUtil eleUtil;
+	
+	private static final Logger LOG = Logger.getLogger(AccountPage.class);
 
 	private By logOutLink = By.linkText("Logout");
 	private By search = By.name("search");
@@ -33,6 +36,7 @@ public class AccountPage {
 
 		String title = eleUtil.waitForTitleIs(AppConstants.DEFAULT_TIME_OUT, AppConstants.ACC_PAGE_TITLE);
 		System.out.println("Account Page title: " + title);
+		LOG.info("Account Page title: " + title);
 		return title;
 	}
 
