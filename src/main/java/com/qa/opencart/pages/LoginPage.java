@@ -62,7 +62,7 @@ public class LoginPage {
 	@Step("Login with username : {0} and password : {1} ")
 	public AccountPage doLogin(String userName, String pwd) {
 		
-		System.out.println("User credentials are: "+ userName + ":" + pwd);
+		System.out.println("User login credentials are: "+ userName + ":" + pwd);
 		
 		eleUtil.doSendKeysWithWait(emailID, AppConstants.DEFAULT_LARGE_TIME_OUT, userName);
 		eleUtil.doSendKeys(password, pwd);
